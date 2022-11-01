@@ -1077,7 +1077,7 @@ Value Eval::evaluate(const Position& pos, int* complexity) {
                         + 424 * abs(classicalComplexity)
                         //If NNUE says we should be very optimistic, seek a win by material more
                         + (optimism > 0 ? int(optimism) * int(classicalComplexity) : 0)
-                        + (optimism > 100 ? int(classicalComplexity) : 0)
+                        + (optimism > 100 ? psq : 0)
                         ) / 1024;
 
       // Return hybrid NNUE complexity to caller
